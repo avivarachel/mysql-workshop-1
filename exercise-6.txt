@@ -1,0 +1,1 @@
+DROP TABLE Test;    // The table titled "Test" is removed
