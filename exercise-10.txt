@@ -1,0 +1,41 @@
+CREATE DATABASE hotel;
+USE hotel;
+CREATE TABLE Availability ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );
+ALTER TABLE Availability ADD COLUMN availableRooms DATETIME;
+ALTER TABLE Availability ADD COLUMN roomSize3 DATETIME;
+ALTER TABLE Availability ADD COLUMN unrentableRooms VARCHAR(255);
+
+DESCRIBE Availability;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| id              | int(11)      | NO   | PRI | NULL    | auto_increment |
+| availableRooms  | datetime     | YES  |     | NULL    |                |
+| roomSize3       | datetime     | YES  |     | NULL    |                |
+| unrentableRooms | varchar(255) | YES  |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+
+CREATE TABLE roomAmenities ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );  
+ALTER TABLE roomAmenities ADD COLUMN hasKitchen VARCHAR(255);
+
+DESCRIBE roomAmenities;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| hasKitchen | varchar(255) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+CREATE TABLE Floors ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) ); 
+ALTER TABLE Floors ADD COLUMN windowsPerFloor VARCHAR(255); 
+ALTER TABLE Floors ADD COLUMN roomsWithCarpets VARCHAR(255); 
+
+DESCRIBE Floors;
++------------------+--------------+------+-----+---------+----------------+
+| Field            | Type         | Null | Key | Default | Extra          |
++------------------+--------------+------+-----+---------+----------------+
+| id               | int(11)      | NO   | PRI | NULL    | auto_increment |
+| windowsPerFloor  | varchar(255) | YES  |     | NULL    |                |
+| roomsWithCarpets | varchar(255) | YES  |     | NULL    |                |
++------------------+--------------+------+-----+---------+----------------+
+
