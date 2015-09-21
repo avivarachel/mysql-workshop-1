@@ -1,0 +1,28 @@
+CREATE DATABASE hatching_chick;
+USE hatching_chick;
+CREATE TABLE Poultry ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );  
+ALTER TABLE Poultry ADD COLUMN typeOfBird ENUM('roosters', 'hens', 'chicks'); 
+ALTER TABLE Poultry ADD COLUMN numberOfBirds DATETIME; 
+
+DESCRIBE Poultry;
++---------------+----------------------------------+------+-----+---------+----------------+
+| Field         | Type                             | Null | Key | Default | Extra          |
++---------------+----------------------------------+------+-----+---------+----------------+
+| id            | int(11)                          | NO   | PRI | NULL    | auto_increment |
+| typeOfBird    | enum('roosters','hens','chicks') | YES  |     | NULL    |                |
+| numberOfBirds | datetime                         | YES  |     | NULL    |                |
++---------------+----------------------------------+------+-----+---------+----------------+
+
+USE hatching_chick;
+CREATE TABLE Chicks ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );     
+ALTER TABLE Chicks ADD COLUMN numberofChicks VARCHAR(255); 
+ALTER TABLE Chicks ADD COLUMN comingOfAge DATETIME; 
+
+DESCRIBE Chicks;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| id             | int(11)      | NO   | PRI | NULL    | auto_increment |
+| numberofChicks | varchar(255) | YES  |     | NULL    |                |
+| comingOfAge    | datetime     | YES  |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
