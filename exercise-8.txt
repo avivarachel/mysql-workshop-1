@@ -50,3 +50,16 @@ DESCRIBE Entry;
 | contentLineFour  | varchar(255)                    | YES  |     | NULL    |                |
 | contentLineFive  | varchar(255)                    | YES  |     | NULL    |                |
 +------------------+---------------------------------+------+-----+---------+----------------+
+
+
+DESCRIBE AddressBook;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| accountId  | int(11)      | YES  |     | NULL    |                |
+| name       | varchar(255) | YES  |     | NULL    |                |
+| createdOn  | datetime     | YES  |     | NULL    |                |
+| modifiedOn | datetime     | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
