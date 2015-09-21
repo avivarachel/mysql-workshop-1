@@ -1,0 +1,52 @@
+USE decodemtl_addressbook;
+ALTER TABLE Account ADD COLUMN email VARCHAR(255);  // adds email column
+ALTER TABLE Account ADD COLUMN password VARCHAR(40); // adds password column
+ALTER TABLE Account ADD COLUMN createdOn DATETIME; // adds column createdOn, which takes a date and a time
+ALTER TABLE Account ADD COLUMN modifiedOn DATETIME;  
+
+DESCRIBE Account;  // so far all we have is id
+ALTER TABLE AddressBook ADD COLUMN accountId INT;  
+ALTER TABLE AddressBook ADD COLUMN name VARCHAR(255);  
+ALTER TABLE AddressBook ADD COLUMN createdOn DATETIME;
+ALTER TABLE AddressBook ADD COLUMN modifiedOn DATETIME; 
+
+DESCRIBE Account;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| email      | varchar(255) | YES  |     | NULL    |                |
+| password   | varchar(40)  | YES  |     | NULL    |                |
+| createdOn  | datetime     | YES  |     | NULL    |                |
+| modifiedOn | datetime     | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+
+ALTER TABLE Entry ADD COLUMN  addressBookId INT; 
+ALTER TABLE Entry ADD COLUMN firstName VARCHAR(255);
+ALTER TABLE Entry ADD COLUMN lastName VARCHAR(255); 
+ALTER TABLE Entry ADD COLUMN birthday DATETIME;
+
+ALTER TABLE Entry ADD COLUMN type ENUM('home', 'work', 'other');  
+ALTER TABLE Entry ADD COLUMN subtype ENUM('phone', 'address', 'email'); 
+ALTER TABLE Entry ADD COLUMN contentLineOne VARCHAR(255); 
+ALTER TABLE Entry ADD COLUMN contentLineTwo VARCHAR(255);
+ALTER TABLE Entry ADD COLUMN contentLineThree VARCHAR(255); 
+ALTER TABLE Entry ADD COLUMN contentLineFour VARCHAR(255);
+
+DESCRIBE Entry;
++------------------+---------------------------------+------+-----+---------+----------------+
+| Field            | Type                            | Null | Key | Default | Extra          |
++------------------+---------------------------------+------+-----+---------+----------------+
+| id               | int(11)                         | NO   | PRI | NULL    | auto_increment |
+| addressBookId    | int(11)                         | YES  |     | NULL    |                |
+| firstName        | varchar(255)                    | YES  |     | NULL    |                |
+| lastName         | varchar(255)                    | YES  |     | NULL    |                |
+| birthday         | datetime                        | YES  |     | NULL    |                |
+| type             | enum('home','work','other')     | YES  |     | NULL    |                |
+| subtype          | enum('phone','address','email') | YES  |     | NULL    |                |
+| contentLineOne   | varchar(255)                    | YES  |     | NULL    |                |
+| contentLineTwo   | varchar(255)                    | YES  |     | NULL    |                |
+| contentLineThree | varchar(255)                    | YES  |     | NULL    |                |
+| contentLineFour  | varchar(255)                    | YES  |     | NULL    |                |
+| contentLineFive  | varchar(255)                    | YES  |     | NULL    |                |
++------------------+---------------------------------+------+-----+---------+----------------+
