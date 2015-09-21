@@ -1,0 +1,7 @@
+mysql-ctl start
+mysql -uavivarachel
+SHOW DATABASES;
+USE mysql;
+CREATE DATABASE decodemtl_test;
+CREATE DATABASE decodemtl_addressbook;
+SHOW DATABASES; 
