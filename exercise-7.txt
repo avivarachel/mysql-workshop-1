@@ -1,0 +1,2 @@
+USE decodemtl_addressbook;  // select this database
+SHOW TABLES; // shows tables created: Account, AddressBook, Entry
