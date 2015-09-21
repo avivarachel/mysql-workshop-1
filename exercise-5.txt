@@ -1,14 +1,55 @@
 USE decodemtl_addressbook;
+
+Database changed
+
 CREATE TABLE Account (
     -> id int NOT NULL AUTO_INCREMENT,
     -> PRIMARY KEY (id)
     -> );
+
+mysql> SHOW TABLES;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
++---------------------------------+
+1 row in set (0.00 sec)
 
 CREATE TABLE AddressBook (
     -> id int NOT NULL AUTO_INCREMENT,
     -> PRIMARY KEY (id)
     -> );
     
-CREATE TABLE Entry ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );  
+mysql> SHOW TABLES;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| AddressBook                     |
++---------------------------------+
+2 rows in set (0.00 sec)    
+    
+CREATE TABLE Entry ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) ); 
+
+mysql> SHOW TABLES;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| AddressBook                     |
+| Entry                           |
++---------------------------------+
+3 rows in set (0.00 sec)
 
 CREATE TABLE Test ( id int NOT NULL AUTO_INCREMENT, PRIMARY KEY (id) );  
+
+mysql> SHOW TABLES;
++---------------------------------+
+| Tables_in_decodemtl_addressbook |
++---------------------------------+
+| Account                         |
+| AddressBook                     |
+| Entry                           |
+| Test                            |
++---------------------------------+
+4 rows in set (0.00 sec)
